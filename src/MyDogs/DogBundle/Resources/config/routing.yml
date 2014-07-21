@@ -1,0 +1,3 @@
+my_dogs_dog_homepage:
+    path:     /dogs
+    defaults: { _controller: MyDogsDogBundle:Dog:index }

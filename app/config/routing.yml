@@ -1,0 +1,4 @@
+my_dogs_dog:
+    resource: "@MyDogsDogBundle/Resources/config/routing.yml"
+    prefix:   /
+

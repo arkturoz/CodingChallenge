@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" namespace="MyDogs\DogBundle\Model" defaultIdMethod="native">
+
+    <table name="dog">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="varchar" primaryString="1" size="100" />
+        <column name="sex" type="char" size="1" />
+        <column name="dob" type="date" />
+        <column name="breed_id" type="integer" />
+        <foreign-key foreignTable="breed">
+            <reference local="breed_id" foreign="id" />
+        </foreign-key>
+    </table>
+
+    <table name="breed">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="breed" type="varchar" primaryString="1" size="100" />
+        <column name="description" type="longvarchar" />
+    </table>
+</database>
