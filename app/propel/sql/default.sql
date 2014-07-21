@@ -4,36 +4,6 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ---------------------------------------------------------------------
--- book
--- ---------------------------------------------------------------------
-
-DROP TABLE IF EXISTS `book`;
-
-CREATE TABLE `book`
-(
-    `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `title` VARCHAR(100),
-    `ISBN` VARCHAR(20),
-    `author_id` INTEGER,
-    PRIMARY KEY (`id`),
-    INDEX `book_FI_1` (`author_id`)
-) ENGINE=MyISAM;
-
--- ---------------------------------------------------------------------
--- author
--- ---------------------------------------------------------------------
-
-DROP TABLE IF EXISTS `author`;
-
-CREATE TABLE `author`
-(
-    `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `first_name` VARCHAR(100),
-    `last_name` VARCHAR(100),
-    PRIMARY KEY (`id`)
-) ENGINE=MyISAM;
-
--- ---------------------------------------------------------------------
 -- dog
 -- ---------------------------------------------------------------------
 
