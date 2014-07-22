@@ -1,1 +1,33 @@
-Hello {{ name }}!
+ {% extends '::base.html.twig' %}
+
+ {% block title %}
+     List of dogs
+ {% endblock %}
+  {% block header %}
+     <h1>List of Dogs</h1>
+ {% endblock %}
+  {% block actions %}
+     <a href="dog/new">Add dog</a>
+ {% endblock %}
+ {% block body %}
+     <table>
+         <thead>
+         <tr>
+             <th></th>
+             <th>Name</th>
+             <th>Sex</th>
+             <th>Breed</th>
+         </tr>
+         </thead>
+         <tbody>
+     {% for dog in dogs %}
+         <tr>
+             <td><a href="dog/delete/{{ dog.id }}">Delete</a></td>
+             <td>{{ dog.name }}</td>
+             <td>{{ dog.sex }}</td>
+             <td>{{ dog.breed }}</td>
+         </tr>
+     {% endfor %}
+         </tbody>
+     </table>
+ {% endblock %}

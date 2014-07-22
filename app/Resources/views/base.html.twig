@@ -3,11 +3,30 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+                {% stylesheets 'bundles/mydogsdog/css/*' filter='cssrewrite' %}
+                    <link rel="stylesheet" href="{{ asset_url }}" />
+                {% endstylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <div id="heading"><img src="{{ asset('bundles/mydogsdog/images/Folder-Dog-icon.png') }}" /><span>My Dogs App</span></div>
+        <div id="navigation">
+            <ul>
+                <li>
+                    <a href="{{ path('homepage') }}">My Dogs</a>
+                </li>                
+                <li>
+                    <a href="{{ path('my_dogs_breed_homepage') }}">Manage Breeds</a>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+        {% block header %}{% endblock %}
+        <div id="actions">{% block actions %}{% endblock %}</div>
         {% block body %}{% endblock %}
+        </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

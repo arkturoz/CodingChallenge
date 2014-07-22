@@ -1,3 +1,27 @@
+homepage:
+    path:     /
+    defaults: { _controller: MyDogsDogBundle:Frontend\Dog:index }
+    
 my_dogs_dog_homepage:
     path:     /dogs
-    defaults: { _controller: MyDogsDogBundle:Dog:index }
+    defaults: { _controller: MyDogsDogBundle:Frontend\Dog:index }
+    
+my_dogs_dog_new:
+    path:     /dog/new
+    defaults: { _controller: MyDogsDogBundle:Frontend\Dog:new }
+    
+my_dogs_dog_delete:
+    path:     /dog/delete/{id}
+    defaults: { _controller: MyDogsDogBundle:Frontend\Dog:delete }
+
+my_dogs_breed_homepage:
+    path:     /breeds
+    defaults: { _controller: MyDogsDogBundle:Backend\Breed:index }
+
+my_dogs_breed_new:
+    path:     /breed/new
+    defaults: { _controller: MyDogsDogBundle:Backend\Breed:new }
+    
+my_dogs_breed_delete:
+    path:     /breed/delete/{id}
+    defaults: { _controller: MyDogsDogBundle:Backend\Breed:delete }
