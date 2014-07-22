@@ -1,0 +1,31 @@
+ {% extends '::base.html.twig' %}
+
+ {% block title %}
+     List of breeds
+ {% endblock %}
+ {% block header %}
+     <h1>List of Breeds</h1>
+ {% endblock %}
+ {% block actions %}
+     <a href="breed/new">Add breed</a>
+ {% endblock %}
+ {% block body %}
+     <table>
+         <thead>
+         <tr>
+             <th></th>
+             <th>Breed</th>
+             <th>Description</th>
+         </tr>
+         </thead>
+         <tbody>
+     {% for breed in breeds %}
+         <tr>
+             <td><a href="breed/delete/{{ breed.id }}">Delete</a></td>
+             <td>{{ breed.breed }}</td>
+             <td>{{ breed.description }}</td>
+         </tr>
+     {% endfor %}
+         </tbody>
+     </table>
+ {% endblock %}
